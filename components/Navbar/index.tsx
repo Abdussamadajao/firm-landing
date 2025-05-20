@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { href: "/practice-areas", text: "Practice Areas" },
   { href: "/attorneys", text: "Our Attorneys" },
   { href: "/testimonials", text: "Testimonials" },
-  { href: "/blog", text: "Blog" },
+  // { href: "/blog", text: "Blog" },
   { href: "/contact", text: "Contact" },
   { href: "/faq", text: "FAQ" },
   { href: "/careers", text: "Careers" },
