@@ -327,12 +327,13 @@ const getPracticeAreaData = (slug: string) => {
   return practiceAreas.find((area) => area.slug === slug) || practiceAreas[0];
 };
 
-export default function PracticeAreaPage({
+export default async function PracticeAreaPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const practiceArea = getPracticeAreaData(params.slug);
+  const { slug } = await params;
+  const practiceArea = getPracticeAreaData(slug);
 
   return (
     <main className="flex-1">

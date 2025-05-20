@@ -407,12 +407,13 @@ const getAttorneyData = (slug: string) => {
   return attorneys.find((attorney) => attorney.slug === slug) || attorneys[0];
 };
 
-export default function AttorneyProfilePage({
+export default async function AttorneyProfilePage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const attorney = getAttorneyData(params.slug);
+  const { slug } = await params;
+  const attorney = getAttorneyData(slug);
 
   return (
     <main className="flex-1">
